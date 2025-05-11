@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:fyp_admin_panel/authentication/login.dart';
 import 'package:fyp_admin_panel/screens/read_dua_screen.dart';
@@ -85,6 +86,18 @@ class _InsertDuaScreenState extends State<InsertDuaScreen> {
         centerTitle: true,
         elevation: 0,
         iconTheme: IconThemeData(color: Colors.white),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.logout),
+            onPressed: () {
+              FirebaseAuth.instance.signOut();
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (_) => Login()),
+              );
+            },
+          )
+        ],
       ),
       body: Container(
         decoration: BoxDecoration(
