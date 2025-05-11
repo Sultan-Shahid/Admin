@@ -18,6 +18,7 @@ class _MainScreenState extends State<MainScreen> {
     InsertDuaScreen(),
     InsertTasbeehScreen(),
     AddQuestionScreen(),
+    AdminAnalyticsDashboard()
    
    
     // ✅ Added Quiz Analysis screen
@@ -157,13 +158,13 @@ class _MainScreenState extends State<MainScreen> {
                   isExpanded: _isExpanded,
                   onTap: () => setState(() => _selectedIndex = 2),
                 ),
-                // _NavItem(
-                //   icon: Icons.analytics,
-                //   label: 'Quiz Analysis',
-                //   isSelected: _selectedIndex == 3,
-                //   isExpanded: _isExpanded,
-                //   onTap: () => setState(() => _selectedIndex = 3),
-                // ),
+                _NavItem(
+                  icon: Icons.analytics,
+                  label: 'Quiz Analysis',
+                  isSelected: _selectedIndex == 3,
+                  isExpanded: _isExpanded,
+                  onTap: () => setState(() => _selectedIndex = 3),
+                ),
               ],
             ),
           ),
@@ -241,10 +242,10 @@ class _MainScreenState extends State<MainScreen> {
             icon: Icon(Icons.question_answer),
             label: 'Quiz',
           ),
-          // BottomNavigationBarItem(
-          //   icon: Icon(Icons.analytics),
-          //   label: 'Analysis',
-          // ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.analytics),
+            label: 'Analysis',
+          ),
         ],
       ),
     );
